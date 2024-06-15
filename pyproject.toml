@@ -1,0 +1,61 @@
+[tool.poetry]
+name = "atomic_sovus"
+version = "0.1.0"
+description = ""
+authors = ["Stepan Styukov <styukovs@yandex.ru>"]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.12"
+langchain = "0.2.3"
+langchain-core = "0.2.5"
+langchain-community = "0.2.4"
+langchain-huggingface = "0.0.3"
+sentence-transformers = "2.7.0"
+sentencepiece = "0.1.99"
+transformers = "4.41.2"
+faiss-cpu = "1.8.0"
+unstructured = {extras = ["docx", "pdf"], version = "^0.12.2"}
+torch = { url = "https://download.pytorch.org/whl/cpu/torch-2.2.0%2Bcpu-cp311-cp311-linux_x86_64.whl" }
+torchvision = { url = "https://download.pytorch.org/whl/cpu/torchvision-0.17.0%2Bcpu-cp311-cp311-linux_x86_64.whl" }
+streamlit = "^1.35.0"
+openpyxl = "^3.1.4"
+python-dotenv = "^1.0.1"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.1.1"
+mypy = "^1.8.0"
+isort = "^5.13.2"
+flake8 = "^7.0.0"
+jupyterlab = "^4.0.12"
+
+[tool.black]
+line-length = 120
+exclude = '''
+(
+  /(
+      \.eggs
+    | \.git
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+  | docs/build/
+  | node_modules/
+  | venve/
+  | .venv/
+)
+'''
+
+[tool.isort]
+profile = "black"
+combine_as_imports = true
+line_length = 120
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
