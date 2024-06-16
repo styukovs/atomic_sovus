@@ -20,6 +20,7 @@ torchvision = { url = "https://download.pytorch.org/whl/cpu/torchvision-0.17.0%2
 streamlit = "^1.35.0"
 openpyxl = "^3.1.4"
 python-dotenv = "^1.0.1"
+streamlit-pdf-viewer = "^0.0.12"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.1.1"
