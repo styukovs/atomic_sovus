@@ -98,9 +98,14 @@ if st.session_state.state == 1:
         st.button("Нет", on_click=increment_state)
 
 if st.session_state.state == 2:
-    st.chat_message("assistant").write("Не могу разобраться... :disappointed:\nМожете, пожалуйста, уточнить вопрос")
+    st.chat_message("assistant").write(
+        "Не могу разобраться... :disappointed:\nУточните, пожалуйста, вопрос чтобы я попытался еще раз"
+    )
     st.session_state.messages.append(
-        {"role": "assistant", "content": "Не могу разобраться... :disappointed:\nМожете, пожалуйста, уточнить вопрос"}
+        {
+            "role": "assistant",
+            "content": "Не могу разобраться... :disappointed:\nУточните, пожалуйста, вопрос чтобы я попытался еще раз",
+        }
     )
     if prompt := st.chat_input("Введите вопрос", disabled=st.session_state.input_disabled, on_submit=disable_input):
         st.chat_message("user").write(prompt)
