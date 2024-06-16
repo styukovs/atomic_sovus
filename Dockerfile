@@ -14,6 +14,7 @@ RUN ["python3", "scripts/download_models.py"]
 COPY vectorstores vectorstores
 COPY data data
 COPY ./app.py .
+COPY pages pages
 
 EXPOSE 8501
 CMD ["streamlit", "run", "app.py"]
